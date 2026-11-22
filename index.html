@@ -9,6 +9,7 @@
 <meta name="theme-color" content="#1f6b3f">
 <title>Юный Эколог</title>
 <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+<link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
 <link rel="stylesheet" href="style.css">
 <!-- Библиотека three.js лежит в папке lib, поэтому игра работает и без интернета -->
@@ -28,5 +29,9 @@
   <div id="debug"></div>
 </div>
 <script type="module" src="src/main.js"></script>
+<script>
+  // Нужно, чтобы Chrome предложил «Установить приложение» (без значка Chrome на иконке)
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
+</script>
 </body>
 </html>
